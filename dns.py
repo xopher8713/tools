@@ -1,11 +1,10 @@
 import sys
-import dnspython3 as dns
-import dnspython3.resolver
-import dnspython3.exception
+import dns.resolver
+import dns.exception
 
 def dnsquery(hostname):
 
-    resolve = dnspython3.resolver.Resolver()
+    resolve = dns.resolver.Resolver()
     resolve.nameservers = ['1.1.1.1', '1.0.0.1']
     try:
         response = resolve.resolve(hostname)
